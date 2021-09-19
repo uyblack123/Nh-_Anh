@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+       //Bài 2 :Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+        let nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+        while (nhietdo<20 || nhietdo>100){
+            if(nhietdo<20){
+                alert("Nhiệt độ quá lạnh")
+                nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+            }else if(nhietdo>100){
+                alert("Nhiệt độ quá nóng")
+                nhietdo = Number(prompt("Nhập vào nhiệt độ"))
+            }
+        }
+        alert("Nhiệt độ bình thường")
+
+
+
+        // Bai 3 : Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+        let a = 0 , b= 0, c=0
+        let fibonacci = "";
+        for (let i=0; i<20;i++){
+            if(i==0){
+                a=1
+                c=1
+                fibonacci += a+ " "
+            }else{
+
+                a= b+c
+                b =c
+                c = a
+                fibonacci += a+ " "
+                console.log(i +" = "+a)
+            }
+        }
+        document.write(fibonacci)
+
+
+
+        // Bai 4 : Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+        let a = 0 , b= 0, c=0
+        let chia5 = ""
+        let fibonacci = "";
+        for (let i=0; i<20;i++){
+            if(i==0){
+                a=1
+                c=1
+                fibonacci += a+ " "
+            }else{
+
+                a= b+c
+                b = c
+                c = a
+                fibonacci += a+ " "
+                console.log(i +" = "+a)
+                if(a%5==0){
+                    chia5 = a
+                    break
+                }
+            }
+        }
+        document.write("Sô chia hết cho 5 trong dãy là "+chia5)
+
+
+        //Bai 5 : Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+        let a = 0 , b= 0, c=0, tong=0
+        let fibonacci = "";
+        for (let i=0; i<20;i++){
+            if(i==0){
+                a=1
+                c=1
+                fibonacci += a+ " "
+                tong +=a
+            }else{
+                a= b+c
+                b = c
+                c = a
+                fibonacci += a+ " "
+                tong +=a
+                console.log(i +" = "+a)
+            }
+        }
+        document.write("Dãy Fibonacci là "+fibonacci+"<br>")
+        document.write("Tổng của các số = "+tong)
+
+
+     // Bài 6 :  Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+        let count = 0, tong =0
+        let dayso =""
+        for (let i=1; ; i++){
+            if(i%7==0){
+                dayso += i+" "
+                console.log(dayso)
+                tong += i
+                count++
+                if(count==30) break
+            }
+        }
+        document.write(dayso+"<br>")
+        document.write("Tổng bằng "+tong)
+
+        //Bài 7 : Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+        for (let i=1; i<=100; i++){
+            if (i%3==0 && i%5 ==0){
+                document.write(i+" FizzBuzz <br>")
+            }else {
+                if (i%3==0){
+                    document.write(i+" Fizz <br>")
+                }
+                else if(i%5==0){
+                    document.write(i+" Buzz <br>")
+                }
+            }
+        }
+
+</script>
+</body>
+</html>
